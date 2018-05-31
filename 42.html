@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script src="jquery-3.3.1.min.js"></script>
+		<script>
+		
+		 
+		 $('p:has(b)').wrap('<div>');
+		 $('p.www').prepend('!').add(':header').css('color', 'red');
+		 $('p:not(.www)').each(function (index) {
+	     $(this).append(index);});
+		 $('div > *:not(h2)').css('color', 'red');
+		 
+         $('p').each(function() {
+	     var $elem = $(this);
+	     var index = $elem.index();
+	     $elem.append(index);});
+		 
+		 $('p').on('click', function() {
+         $(this).nextAll().eq(4).remove(); });
+		 
+		 $('p').wrap('<div>').wrapInner('<div>');
+		 
+		 var $elem2 = $('#test');
+         var textPrev = $elem2.prev().html();
+         var textNext = $elem2.next().html();
+         $elem2.prepend(textPrev);
+         $elem2.append(textNext);
+		 
+		 $('p').parent().not('div').children('p').wrap('<div class="www">');
+		 
+		 $('div').height(function (index, height) {
+	     return height*2;});
+		 
+		 $('#test').click(function() {$(this).parentsUntil('.www').find('p').css('color', 'red');});
+		 
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

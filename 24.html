@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		 <p id="elem"></p>
+		 <p id="elem2" class="www bbb"></p>
+		 <p id="elem3" class="www zzz aaa"></p>
+		 <p id="elem4">Css!</p>
+		 <ol id="ol"></ol>
+		 <p id="elem5" onclick="func()">Элемент</p>
+		 
+		 
+		 <h1 class="www">Элемент 1</h1>
+         <p class="www">Элемент 2</p>
+         <div class="www">Элемент 3</div>
+		 <br>
+		 
+		 <p id="elem6">wewwwewe</p>
+		 
+		 <br>
+		 
+		 <ul id="elem7">
+	     <li>пункт 1</li>
+	     <li id="elem8">пункт 2</li>
+	     <li>пункт 3</li>
+         </ul>
+		 <br>
+		 <p id="b1">Текст <span id="s1">текст для удаления</span></p>
+         <input type="submit" id="cl">
+		 
+         <br>
+		 <input type="submit" value="+" id="but2">
+         <input type="text">
+		 <br>
+		 
+		<script>
+		
+		 var but2 = document.getElementById('but2');
+         but2.addEventListener('click', funci);
+         function funci(){
+	     var parent = but2.parentElement;
+	     var newIn = document.createElement('input');
+	     parent.appendChild(newIn);}
+		 
+		 
+		 var cl = document.getElementById('cl');
+         cl.addEventListener('click', fun);
+         function fun() {
+	     var b1 = document.getElementById('b1');
+         var s1 = document.getElementById('s1');
+	     b1.removeChild(s1);}
+		 
+		 var elem = document.getElementById('elem8');
+         var prev = elem.previousElementSibling;
+         prev.innerHTML = prev.innerHTML + '!';
+		 var prev = elem.nextElementSibling;
+         prev.innerHTML = prev.innerHTML + '!';
+		 var elem = document.getElementById('elem7');
+         elem.firstElementChild.style.color = 'red'; 
+		 var elem = document.getElementById('elem7');
+         elem.lastElementChild.style.color = 'red';
+		 
+		 var elem = document.getElementById('elem');
+         elem.classList.add('www');  
+		 
+		 var elem = document.getElementById('elem2');
+         elem.classList.remove('www');  
+		 
+		 var elem = document.getElementById('elem3');
+         alert(elem.classList.length);
+          
+		 var elem = document.getElementById('elem4');
+         elem.style.cssText = 'color: red; font-size: 30px;border: solid 1px black;'; 
+		 
+		 var ol = document.getElementById('ol');
+         var li = document.createElement('li');
+         li.innerHTML = 'пункт';
+         elem.appendChild(li); 
+		 
+		 function func() {
+	     var elem = document.getElementById('elem5');
+	     alert(elem.tagName);}
+		  
+		 var elems = document.querySelectorAll('.www');
+         for (var i = 0; i < elems.length; i++) {
+	     elems[i].innerHTML = elems[i].innerHTML + elems[i].tagName.toLowerCase();}
+		  
+		 var elem = document.getElementById('elem6');
+         elem.insertAdjacentHTML('beforeBegin','<span>!!!</span>');  
+		 
+		 var arr = [1, 2, 3];
+         var ul = document.createElement('ul');
+         for (var i = 0; i < arr.length; i++) {
+	     var li2 = document.createElement('li');
+ 	     li2.innerHTML = arr[i];
+	     ul.appendChild(li2);}
+         document.body.appendChild(ul);
+		 
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

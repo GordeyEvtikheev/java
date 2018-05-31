@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script src="jquery-3.3.1.min.js"></script>
+		<script>
+		 $('h2').wrap('<div>');
+		 $('h2').wrap('<div class="test"></div>');
+		 $('h2').wrapInner('<i>');
+		 $('div > p').unwrap();
+		 
+		 $('h2').before('<p>!</p>');
+		 $('h2').after('<p>?</p>');
+		 $('h2').before('<p>!</p>').after('<p>?</p>');
+		 $('h2').prepend('!');
+		 $('h2').apppend('?');
+		 
+		 $('h2').remove();
+		 $('h2').empty();
+		 
+		 $('li').attr('class','test');
+		 $('li.www').removeAttr('class');
+		 
+		 $('#wraper').children(':lt(3)').each(function() {
+	     var width = $(this).width();
+	     var height = $(this).height();
+	     alert("Ширина: "+width+" Высота: "+height);}) 
+		 
+		 $('#wraper').children(':lt(3)').each(function() {
+	     var width = $(this).innerWidth();
+	     var height = $(this).innerHeight();
+	     alert("Ширина: "+width+" Высота: "+height);}) 
+		 
+		 
+		 
+		 
+		 
+		 
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>

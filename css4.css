@@ -1,0 +1,21 @@
+﻿#elem {
+width: 200px;
+height: 400px;
+border: 1px solid black;
+}
+#elem2 {
+width: 200px;
+height: 400px;
+border: 1px solid black;
+}
+#elem3 {
+width: 200px;
+height: 400px;
+border: 1px solid black;
+}
+#elem4 {
+	width: 150px;
+	height: 150px;
+	padding: 10px;
+	border: 1px solid black;
+}

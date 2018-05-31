@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		 
+		 <input class="cls" type="text" value="" placeholder="Число">
+         <input class="cls" type="text" value="" placeholder="Число">
+         <input class="cls" type="text" value="" placeholder="Число">
+         <button id="but1">Кнопка</button>
+         <input id="sum" type="text" value="" placeholder="Сумма"> 
+		 <br>
+		 <br>
+		 <input class="num" type="text" value="" >
+         <input class="num" type="text" value="" >
+         <input class="num" type="text" value="" >
+         <button id="but2">Кнопка</button>
+         <p id="result"></p>    
+		 <br>
+		 <br>
+		 <input type="text" id="num" value="">
+         <p id="result1">кол-во слов</p>
+		 <br>
+		 <br>
+		 <p id="text2">Красный и зеленый</p>
+		 <br>
+		 <br>
+		 <input id="text3" type="checkbox" checked="">
+         <a href='#' onclick="func5()">Cсылка</a>
+		 <br>
+		 <br>
+		 <input class="vol" type="radio" name="raz" value="html">html 
+         <input class="vol" type="radio" name="raz" value="css">css 
+         <input class="vol" type="radio" name="raz" value="js">js 
+         <input class="vol" type="radio" name="raz" value="php">php 
+         <p id="text4"></p> 
+		 <br>
+		 <br>
+		 
+		 <table>
+	     <tr>
+		 <td>253</td>
+		 <td>11</td>
+		 <td>-23</td>
+         </tr>
+	     <tr>
+		 <td>4</td>
+		 <td>13</td>
+		 <td>232</td>
+	     </tr>
+	     <tr>
+		 <td>15</td>
+		 <td>213</td>
+		 <td>6</td>
+	     </tr>
+         </table>
+         <button id="but3">Кнопка</button>
+		 <ul>
+	     <li>22</li>
+	     <li>-5</li>
+	     <li>-11</li>
+	     <li>23</li>
+	     <li>11</li>
+         </ul>
+         <button id="but4">Сортировать</button>
+		 
+		 
+		 
+		 
+		 
+		<script>
+		 var btn = document.getElementById('but4');
+         btn.addEventListener('click', toSort);
+         function toSort() {
+	     var items = document.querySelectorAll('li');
+	     var itemsArr = [];
+	     for (var i = 0; i < items.length; i++) {
+		 itemsArr[i] = items[i].innerHTML;}
+	     itemsArr.sort(function(a,b){return a-b});
+	     for (var i = 0; i < items.length; i++){
+		 items[i].innerHTML = itemsArr[i];}}   
+		
+		
+		
+         var elems = document.getElementsByTagName('td');
+         var trigger = document.getElementById('but3');
+         trigger.addEventListener('click', func7);
+         var max ='';
+         var n = 0;
+         function func7() {
+	     for (var i = 0; i < elems.length; i++) {
+		 if (+elems[i].innerHTML > max) {
+		 max = +elems[i].innerHTML;
+		 n = i;}}
+	     elems[n].style.background = 'red';}
+		 
+		
+		 
+		 var elem6 = document.getElementsByClassName('vol');
+         var p2 = document.getElementById('text4');
+         for (var i = 0; i < elem6.length; i++) {
+	     elem6[i].addEventListener('change', func6);}
+         function func6() {
+	     if(this.checked) {
+		 p2.innerHTML=this.value;}}  
+		
+		 
+		 function func5() {
+	     var elem5 = document.getElementById('text3');
+	     if (elem5.checked) {
+		 elem5.checked = false;} else {
+		 elem5.checked = true;} }       
+		 
+		 var p = document.getElementById('text2');
+         window.setInterval(func4, 1000);
+         function func4() {
+	     if(p.style.color =='red') {
+		 p.style.color = 'green';} else {
+         p.style.color ='red';}}   
+		
+		 
+		 var elem4 = document.getElementById('num');
+         elem4.addEventListener('blur', func3);
+         function func3() {
+	     var num = 0;
+	     var str = elem4.value;
+	     var arr = str.split(' ');
+	     for (var i = 0; i < arr.length; i++) {
+		 num += 1;}
+	     var p = document.getElementById('result1');
+	     p.innerHTML = num;}    
+		
+		 
+		 var elem2 = document.getElementById('but2');
+         elem2.addEventListener('click', func2);
+         var elem3 = document.getElementsByClassName('num');
+         function func2() {
+	     var sum1 = 0;
+	     for (var i = 0; i < elem1.length; i++) {
+		 sum1 += +elem3[i].value;}
+	     var newElem2 = document.getElementById('result');
+	     newElem2.innerHTML = sum1;}    
+		 
+		 
+		 var elem = document.getElementById('but1');
+         elem.addEventListener('click', func);
+         var elem1 = document.getElementsByClassName('cls');
+         function func() {
+	     var sum = 0;
+	     for (var i = 0; i < elem1.length; i++) {
+		 sum += +elem1[i].value;}
+	     var newElem = document.getElementById('sum');
+	     newElem.value = sum;}    
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

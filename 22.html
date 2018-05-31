@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		
+		
+		 <input type="text" value="1" id="test">
+         <button onclick="start()">Старт</button>
+		 <button onclick="stop()">Стоп</button>
+		 <br>
+		 <br>
+		 
+		 <input type="text" value="99999" id="test2">
+ 		 <button onclick="time()">Обратный отсчет</button>
+		 <br>
+		 <br>
+		 <input type="text" value="10" id="test3">
+ 		 <button onclick="tim()">Таймер</button>
+		<script>
+		
+		 function start() {
+		 window.timerId=window.setInterval(timer, 1000);}
+
+         function timer() {
+	     var elem = document.getElementById('test');
+	     elem.value = parseInt(elem.value)+1;}
+		 
+		 function stop() {
+         window.clearInterval(window.timerId);}
+		 
+		 function time(){
+		 window.setInterval(func,1000);}
+		  function func(){
+		   var elem=document.getElementById('test2');
+		   elem.value=parseInt(elem.value)-1; }
+		
+		 function tim(){
+		 window.timerId2=window.setInterval(fun,1000);}
+		  function fun(){
+		   var elem=document.getElementById('test3');
+		   elem.value=parseInt(elem.value)-1;
+             if ((elem.value)==0){
+			 window.clearInterval(window.timerId2);}}
+	     
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

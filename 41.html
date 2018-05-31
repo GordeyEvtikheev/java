@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		 <link rel="stylesheet" href="css4.css" type="text/css">
+		 
+		 
+		 <button id="hide">Спрятать</button>
+         <button id="show">Показать</button>
+         <div id="elem">Блок с текстом.</div>
+		 <br>
+		 <br>
+		 <button id="toggle">Одна кнопка</button>
+         <div id="elem2">Блок с текстом.</div>
+		 <br>
+		 <br>
+		 <button id="hide2">Спрятать</button>
+         <button id="show2">Показать</button>
+         <div id="elem3">Блок с текстом.</div>
+		 <br>
+		 <br>
+		 <button id="button">Нажми на меня</button>
+         <div id="elem4"></div>
+		 
+		 
+		 
+		<script src="jquery-3.3.1.min.js"></script>
+		<script>
+		
+		 $('#hide').click(function() {
+         $('#elem').hide(1000);});
+         $('#show').click(function() {
+	     $('#elem').show(1000);});
+		 
+		 $('#toggle').click(function() {
+	     $('#elem2').slideToggle(1000);});
+		 
+		 $('#hide2').click(function() {
+	     $('#elem3').fadeOut(1000);});
+         $('#show2').click(function() {
+	     $('#elem3').fadeIn(1000);});
+		 
+		 $('#button').click(function() {
+	     $('#elem4').animate({height: 50, width: 100}, 1000);});
+		 
+		 
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

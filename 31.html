@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		 <link rel="stylesheet" href="css3.css" type="text/css">
+		 <div id="calc">
+		 <input type="text" id="display" disabled>
+		 <div class ="button button_C" title="Очистить" data-type="C">C</div>
+		 <div class="button" data-type="7">7</div>
+		 <div class="button" data-type="8">8</div>
+		 <div class="button" data-type="9">9</div>
+		 <div class="button" data-type="/">/</div>
+		 <div class="button" data-type="4">4</div>
+		 <div class="button" data-type="5">5</div>
+		 <div class="button" data-type="6">6</div>
+		 <div class="button" data-type="*">*</div>
+		 <div class="button" data-type="1">1</div>
+		 <div class="button" data-type="2">2</div>
+		 <div class="button" data-type="3">3</div>
+		 <div class="button" data-type="-">-</div>
+		 <div class="button" data-type="0">0</div>
+		 <div class="button" data-type=".">.</div>
+		 <div class="button" data-type="=">=</div>
+		 <div class="button" data-type="+">+</div>
+		 </div>
+		 
+		 <div id="calendar">
+		<div class="controls">
+			<div id="date">2018 Май</div>
+			<div class="buttons">
+				<a class="button" id="prev">←</a>
+				<a class="button" id="next">→</a>
+			</div>
+		</div>
+		<div class="daysName">
+			<div>Пн</div>
+			<div>Вт</div>
+			<div>Ср</div>
+			<div>Чт</div>
+			<div>Пт</div>
+			<div>Сб</div>
+			<div>Вс</div>
+		</div>
+		<div id="days"><div class="day other"></div>
+		<div class="day">1</div>
+		<div class="day">2</div>
+		<div class="day">3</div>
+		<div class="day">4</div>
+		<div class="day">5</div>
+		<div class="day">6</div>
+		<div class="day">7</div>
+		<div class="day">8</div>
+		<div class="day">9</div>
+		<div class="day">10</div>
+		<div class="day">11</div>
+		<div class="day">12</div>
+		<div class="day">13</div>
+		<div class="day">14</div>
+		<div class="day">15</div>
+		<div class="day">16</div>
+		<div class="day">17</div>
+		<div class="day">18</div>
+		<div class="day">19</div>
+		<div class="day">20</div>
+		<div class="day">21</div>
+		<div class="day">22</div>
+		<div class="day">23</div>
+		<div class="day today">24</div>
+		<div class="day">25</div>
+		<div class="day">26</div>
+		<div class="day">27</div>
+		<div class="day">28</div>
+		<div class="day">29</div>
+		<div class="day">30</div>
+		<div class="day">31</div>
+		</div>
+	</div>
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		<script>
+		 
+		var calc = document.getElementById('calc');
+		var buttons = calc.getElementsByClassName('button');
+		var display = document.getElementById('display');
+		var str = '';
+		for (var i = 0; i < buttons.length; i++) {
+			addEvent(buttons[i]);               
+		}
+		function addEvent(button) {
+			button.addEventListener('click', event);
+			function event() {
+				var type = button.getAttribute('data-type');  
+				if (type === '=') {
+					str = eval(str);
+					display.value = str;
+					return;
+				} else if (type === 'C') {
+					str = '';
+				} else {
+					str += type;}
+				display.value = str;}}
+				
+	     
+		 
+		 
+		 
+		 
+		 
+		 
+		var daysEl = document.getElementById('days');
+		var dateEl = document.getElementById('date');
+		var prevEl = document.getElementById('prev');
+		var nextEl = document.getElementById('next');
+		var deferentMonth = 0;
+		var oneHour = 1000 * 60 * 60;
+		var oneDay = oneHour * 24;
+		var MONTHS = [
+			'Январь','Февраль','Март','Апрель', 
+			'Май','Июнь','Июль','Август',
+			'Сентябрь','Октябрь','Ноябрь','Декабрь'
+		];
+		create();
+		prevEl.addEventListener('click', prev);
+		nextEl.addEventListener('click', next);
+		function prev() {
+			deferentMonth--;
+			create();
+		}
+		function next() {
+			deferentMonth++;
+			create();
+		}
+		function create() {
+			var d = new Date();	
+			d.setMonth(d.getMonth() + deferentMonth);
+			var year = d.getFullYear();
+			var month = d.getMonth();
+			var dayCount = (new Date(year, month + 1, 0)).getDate();
+			var dayStart = (new Date(year, month, 1)).getDay();
+			if (dayStart === 0) {
+				dayStart = 7;
+			}
+			var today = null;
+			if (deferentMonth === 0) {
+				var today = d.getDate();
+			}
+			printDate(d);
+			generate(dayCount, today, dayStart);
+		}
+		function generate(count, today, start) {
+			var html = '';
+			for (var i = 1; i < start; i++) {
+				html += '<div class="day other"></div>';
+			}
+			for (var i = 1; i <= count; i++) {
+				var cl = 'day';
+				if (i === today) {
+					cl += ' today';
+				}
+				html += '<div class="' + cl + '">' + i + '</div>';
+			}
+			daysEl.innerHTML = html;
+		}
+		function printDate(d) {
+			dateEl.innerHTML = d.getFullYear() + ' ' 
+				+ MONTHS[d.getMonth()];
+		}
+	
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

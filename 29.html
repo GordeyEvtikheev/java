@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		 <form id="form">
+         <input type="text">
+         <input type="text">
+         </form>
+         <span></span>
+         <input type="submit">
+		<script>
+		 let form = document.querySelector('#form'),
+         sub = document.querySelector('input[type=submit]'),
+         span = document.querySelector('span');
+         sub.addEventListener('click', function () {
+         let result = 0;
+         for(let i = 0; i < form.elements.length; i++) {
+         result += form.elements[i].value * 1;}
+         span.innerHTML = `Сумма: ${result}`;});
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

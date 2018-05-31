@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<button onclick="alert('Привет!')">Нажми</button>
+		
+		 <button onclick="buttonClick()">Текст</button>
+         <input type="text" id="input" value="">
+		
+		 <button onclick="buttonClick1()">Смена текста</button>
+		 
+         <button onclick="buttonClick2()">Вывод</button>
+        
+		
+		 <button onclick="buttonClick3()">Квадрат</button>
+         
+	
+	     <button onclick="buttonClick4()">Смена цвета</button>
+	
+        
+	
+	
+	
+		<script>
+		function buttonClick1() {
+	    var input = document.getElementById('input');
+	    input.value = '!!!';}
+		
+		function buttonClick2() {
+	    var input = document.getElementById('input');
+	    alert(input.value);}
+		
+		function buttonClick3() {
+        var input = document.getElementById('input');
+	    var number = Number(input.value);
+	    var square = number*number;
+	    alert(square); }
+		
+		function buttonClick4(){
+		var input=document.getElementById('input');
+		input.style.color ='red';}
+		</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>

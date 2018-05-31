@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+         <p id="k1"> 
+         Нажми на кнопку и текст изменится
+		 </p>
+         <input type="submit" value="Смена текста" onclick="sm()">
+		 <input type="submit" value="Смена на h3" onclick="sm1()">
+		 <br>
+		 <br>
+		 <input type="text" id="input1" value=""> +
+		 <input type="text" id="input2" value=""> =
+		 
+		 <br>
+		 <input type="submit" value="Сложение" onclick="sm2()">
+         <br>
+		 <p id="k2">
+		 Нажмите на кнопку ниже чтобы сменить цвет
+		 </p>
+		 <input type="submit" value="Красный" onclick="f1()">
+		 <input type="submit" value="Желтый" onclick="f2()">
+		 <input type="submit" value="Зеленый" onclick="f3()">
+		 <script>
+		 function sm(){
+		 var elem = document.getElementById('k1');
+		 elem.innerHTML= 'Guchi gang';}
+		
+		 function sm1(){
+		 var elem=document.getElementById('k1');
+		 elem.innerHTML= '<h3>я теперь h3</h3>';}
+		
+		 function sm2() {
+         var input1 = document.getElementById('input1');
+		 var input2 = document.getElementById('input2');
+	     var number1 = Number(input1.value);
+		 var number2 = Number(input2.value);
+	     var result = number1+number2;
+	     alert(result); }
+         
+         function f1(){
+		 var input=document.getElementById('k2');
+		 input.style.color ='red';}		
+         
+         function f2(){
+		 var input=document.getElementById('k2');
+		 input.style.color ='yellow';}	
+
+         function f3(){
+		 var input=document.getElementById('k2');
+		 input.style.color ='green';}		 
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

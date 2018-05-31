@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		
+		
+		 <link rel="stylesheet" href="css2.css" type="text/css">
+		 <div id="elem1"></div>
+		 <br>
+		 
+		 <input onkeypress="go(event);">
+         <div>Клавиша: <span id="kl1">?</span>, Код: <span id="kl2">?</span></div>
+		 <br>
+		 
+         <input type="button" id="button" value="Кнопка">
+		 <div> <span id="clok">Нажмите на кнопку + ctrl и цвет текста станет красным</span></div>
+
+		 <script>
+		 var button = document.getElementById('button');
+	     button.addEventListener('click',func2);
+		 var elem2 = document.getElementById('clok');
+		 function func2(event){
+		 if (event.ctrlKey){
+		 elem2.style.cssText = 'color: red;';}}
+		 
+
+		 
+		 
+		 
+		 function go(event) {
+         document.getElementById('kl2').innerHTML = event.which;
+	     document.getElementById('kl1').innerHTML = String.fromCharCode(event.which);}
+	
+		 var elem = document.getElementById('elem1');
+         elem.onmousemove = func;
+         function func(event) {
+	     this.innerHTML ='X: ' + event.clientX + ':' + 'Y: ' + event.clientY;}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

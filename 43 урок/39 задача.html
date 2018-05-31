@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Document</title>
+			<script src="jquery-3.3.1.js"></script>
+			<script src="jquery-ui.min.js"></script>
+			<link rel="stylesheet" href="styles.css">
+	<style type="text/css">
+		a{
+			color: orange;
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: underline;
+		}
+
+		.ui-tabs-nav a{
+			font-size: 16px;
+			font-weight: normal;
+		}
+		#tabs{
+			width: 80%;
+			margin: 0 auto;
+		}
+		.ui-tabs-panel{
+			font: normal 15px Arial;
+			text-align: justify;
+		}
+	</style>	
+	</head>
+<body>
+	<a href="#" id="show">Показать окно!</a><br>
+	<a href="#" id="hide">Спрятать окно!</a><br>
+	<div id="dialog" title="Простое окно">
+	  <p>
+		This is the default dialog which is useful for 
+		displaying information. The dialog window can be 
+		moved, resized and closed with the 'x' icon.
+	  </p>
+	</div>
+		<script>
+		$(document).ready(function(){
+			$("#dialog").dialog({
+					autoOpen: false,
+					modal:true,
+					buttons:{
+						Ok: function(){
+							alert('Вы нажали на кнопку OK!');
+							$(this).dialog( "close" );
+						}
+					}
+				}
+			);
+			$('#show').click(function(){
+				$( "#dialog" ).dialog( "open" );
+				return false;
+			});
+			$('#hide').click(function(){
+				$( "#dialog" ).dialog( "close" );
+				return false;
+			});
+		});
+	</script>
+</body>
+</html>

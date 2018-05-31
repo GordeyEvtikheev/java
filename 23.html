@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		
+		 <p>2</p>
+         <p>4</p>
+         <p>6</p>
+		 <img src="img1.jpg">
+		 <br>
+         <img src="img2.jpg">
+		 <br>
+         <img src="img3.jpg">
+		 <br>
+		 
+		 <a href="#" title="">Первая</a>
+         <a href="#" title="">Вторая</a>
+         <a href="#" title="">Третья</a>
+		 <br>
+		 <br>
+		 <br>
+		 <input type="text" value="1">
+         <input type="text" value="2">
+         <input type="text" value="3">
+		<script>
+		 var elems1 = document.getElementsByTagName('img');
+         for (var i = 0; i < elems1.length; i++) {
+	     elems1[i].onclick = func1;}
+         function func1() {
+	     alert(this.getAttribute('src'));}
+		 
+		 
+		 var elems2 = document.getElementsByTagName('a');
+         for (var i = 0; i < elems2.length; i++) {
+	     elems2[i].addEventListener('mouseover', func2);}
+         function func2() {
+         this.title = this.innerHTML;}
+		 
+		 var elems = document.getElementsByTagName('p');
+         for (var i = 0; i < elems.length; i++) {
+	     elems[i].addEventListener('click', func3);}
+          function func3() {
+	      this.innerHTML = this.innerHTML * this.innerHTML;}
+		  
+		  
+		 var elems = document.getElementsByTagName('input');
+         for (var i = 0; i < elems.length; i++) {
+	     elems[i].addEventListener('click', func);}
+         function func() {
+	     alert(this.value);
+	     this.removeEventListener('click', func);} 
+		 
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

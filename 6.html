@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+		
+		var a=15;
+		var b=2;
+		var ost=a%b;
+		if (ost!=0) {alert('Делится с остатком' +ost);}
+		else {alert('Делится без остатка');}
+		
+		var arr = [4, 2, 5, 19, 13, 0, 10];
+        var summ = 0;
+        for (var i = 0; i < arr.length; i++) {
+	    summ += Math.pow(arr[i], 3);}
+        alert(Math.sqrt(summ));
+		
+		alert(Math.sqrt(379).toFixed(0)); 
+        alert(Math.sqrt(379).toFixed(1)); 
+        alert(Math.sqrt(379).toFixed(2));
+		
+		alert(Math.max(4, -2, 5, 19, -130, 0, 10));  
+        alert(Math.min(4, -2, 5, 19, -130, 0, 10));
+		
+		var arr = [];
+        for (i = 0; i < 10; i++) {
+	    arr[i] = Math.floor(Math.random() * (100 - 1 + 1)) + 1;}
+        alert(arr);
+		
+		var a = 10;
+        var b = 3;
+        alert(Math.abs(b-a));
+		
+		var a = 3;
+        var b = 5;
+        var с = Math.abs(a-b);
+         alert(с);
+		 
+		 var fact = 1;
+         var num = 10;
+         for (var i = 1; i <= num; i++) {
+	     fact = fact * i;}
+         alert(fact);
+		 
+				</script>
+	</head>
+	<body>
+		Это основное содержимое страницы.
+	</body>
+</html>

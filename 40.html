@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		
+		 <ul>
+	     <li>пункт 1</li>
+	     <li>пункт 2</li>
+	     <li>пункт 3</li>
+         </ul>
+		 <br>
+		 <br>
+		 <a href="www.google.com">google</a>
+		 <a href="www.vk.com">vk</a>
+		 <br>
+		 <br>
+		 <p>p1</p>
+		 <p>p2</p>
+		 <p>p2</p>
+		 
+		 <script src="jquery-3.3.1.min.js"></script>
+		 <script>
+		 
+		 $('li').click(function() {
+			alert($(this).html());});
+		 
+		 $('a').mouseover(function f() {$(this).append('('+$(this).attr('href')+')')} )
+		 
+		 $('p').one('click',function f(){$(this).append('!')})
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

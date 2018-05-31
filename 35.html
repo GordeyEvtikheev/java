@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Это заголовок тайтл</title>
+		<script>
+		 let newArr = ['первый', 'второй', 'третий', 'четвертый', 'пятый', 'шестой', 'седьмой'];
+         let [elem1, elem2, ...arr] = newArr;
+		 alert(elem1);
+		 alert(elem2);
+		 alert(arr);
+		 let [,elem3]=newArr;
+		 alert(elem3);
+		 
+		 let arr2 = ['elem1', 'elem2', 'elem3'];
+         for (let curr of arr2){
+	     alert(curr);}
+		 
+		 let arr3 = [1, 2, 3, 4, 5];
+         var sum = 0;
+         for (let curr2 of arr3){
+	     sum += curr2;}
+         alert(sum);
+		 
+		 let user = {
+	     name: 'Пётр',
+	     surname: 'Петров',
+	     age: '20 лет'};
+         let{name, surname, age} = user;
+         alert(name);
+		 alert(surname);
+		 alert(age);
+		 
+		 
+		 
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
